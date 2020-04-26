@@ -29,6 +29,8 @@ const loadImage = (src) => new Promise((resolve) => {
   img.src = src
 })
 
+const decel = (x) => 1-(x-1)*(x-1) // easing
+
 fileInput.addEventListener('input', async (e) => {
   console.log(e)
   if (fileInput.files && fileInput.files[0]) {
@@ -71,7 +73,7 @@ fileInput.addEventListener('input', async (e) => {
 
         resultCtx.lineTo(
           x,
-          (y + 0.5) * imageHeight / 50 + Math.sin(l * Math.PI / 2) * 5 * m
+          (y + 0.5) * imageHeight / 50 + Math.sin(l * Math.PI / 2) * 5 * decel(m)
         )
       }
       resultCtx.stroke()
