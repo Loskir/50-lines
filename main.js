@@ -57,6 +57,8 @@ fileInput.addEventListener('input', async (e) => {
       pix[i + 3] = 255
     }
 
+    // let points = []
+
     for (let y = 0; y < 50; ++y) {
       resultCtx.beginPath()
       resultCtx.lineWidth = 2
@@ -65,7 +67,9 @@ fileInput.addEventListener('input', async (e) => {
       let l = 0;
 
       for (let x = 0; x < imageWidth; ++x) {
-        const c = pix[((y * imageHeight / 50) * imageWidth + x)*4]
+        const c = pix[((y * imageHeight / 50 + 6) * imageWidth + x)*4]
+
+        // points.push([x, y * imageHeight / 50 + 6])
 
         l += (255 - c) / 255
 
@@ -78,5 +82,12 @@ fileInput.addEventListener('input', async (e) => {
       }
       resultCtx.stroke()
     }
+
+    // resultCtx.fillStyle = 'red'
+    // points.forEach(([x, y]) => {
+    //   resultCtx.beginPath()
+    //   resultCtx.arc(x, y, 1, 0, 2 * Math.PI)
+    //   resultCtx.fill()
+    // })
   }
 })
