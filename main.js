@@ -59,6 +59,9 @@ fileInput.addEventListener('input', async (e) => {
 
     // let points = []
 
+    resultCtx.fillStyle = '#ffffff'
+    resultCtx.fillRect(0, 0, imageWidth, imageHeight)
+
     for (let y = 0; y < 50; ++y) {
       resultCtx.beginPath()
       resultCtx.lineWidth = 2
