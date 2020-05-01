@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <title>50 Lines</title>
   <style>
     #source {
@@ -10,6 +11,26 @@
       z-index: -1;
       left: -1000vw;
     }
+
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      height: 100vh;
+      font-family: Roboto, sans-serif;
+    }
+
+    .subscribe-box {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      padding: 7px;
+      line-height: 1.5;
+      background: white;
+    }
   </style>
 </head>
 <body>
@@ -17,5 +38,9 @@
 <canvas id="result"></canvas>
 <input type="file" accept="image/*" id="file-input">
 <script src="main.js"></script>
+<div class="subscribe-box">
+  <a href="https://github.com/Loskir/50-lines-webcam" target="_blank" rel="noopener noreferrer">Source</a>.
+  Subscribe to my channel: <a href="https://tttttt.me/loskirs" target="_blank" rel="noopener noreferrer">@Loskirs</a>
+</div>
 </body>
 </html>
